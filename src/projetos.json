@@ -1,0 +1,57 @@
+{
+  "1": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+  "2": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+    "3": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+    "4": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+    "5": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+    "6": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+    "7": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+    "8": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+    "9": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+    "10": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  },
+    "11": {
+    "nome": "Monitoramento de Temperatura",
+    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+  }
+}

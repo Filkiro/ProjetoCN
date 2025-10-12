@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto - Smart Etec</title>
+  <link rel="stylesheet" href="../css/projs.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+
+  <main>
+
+    <section id="menu-lateral">
+      <h2>Navegação Rápida</h2>
+      <ul>
+        <li class="hoverBtn"><a href="../index.html">Home</a></li>
+        <li id="p0" class="hoverBtn">
+            <details class="projetos">
+                <summary id="marked">Projetos</summary>
+                <div id="lista-projetos"></div>
+            </details>
+            
+        </li>
+
+        <li class="hoverBtn"><a href="QS.html">Quem Somos</a></li>
+      </ul>
+    </section>
+
+    <section id="conteudo-principal">
+      <h1 id="titulo"></h1>
+  
+      
+      <div id="grafico-container">
+        <canvas id="grafico"></canvas>
+      </div>
+  
+      <h2>Sobre o Projeto</h2>
+      <p id="descricao"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Smart Etec — © 2025 Smart Etec — Etec de Campo Limpo Paulista — 2°AI</p>
+  </footer>
+
+  <script src="../scripts/fetchData.js"></script>
+  <script src="../scripts/fetchNome.js"></script>
+</body>
+</html>

@@ -1,55 +1,72 @@
 {
   "1": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666"
   },
   "2": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666"
   },
     "3": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666"
   },
     "4": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
   },
     "5": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
   },
     "6": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
   },
     "7": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
   },
     "8": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
   },
     "9": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
   },
     "10": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
   },
     "11": {
+    "sala": "101",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"

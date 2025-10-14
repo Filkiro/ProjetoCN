@@ -9,42 +9,45 @@
 </head>
 <body>
 
+  <header>
+    <h1><span>Smart Etec</span></h1>
+
+    <button id="toggle-theme" class="theme-toggle">
+      <img src="../src/assets/brightness-down.svg" alt="Tema Claro" class="icon-sun">
+      <img src="../src/assets/moon.svg" alt="Tema Escuro" class="icon-moon">
+    </button>
+  </header>
 
   <main>
-
-    <section id="menu-lateral">
-      <h2>Navegação Rápida</h2>
-      <ul>
-        <li class="hoverBtn"><a href="../index.html">Home</a></li>
-        <li id="p0" class="hoverBtn">
-            <details class="projetos">
-                <summary id="marked">Projetos</summary>
-                <div id="lista-projetos"></div>
-            </details>
-            
-        </li>
-
-        <li class="hoverBtn"><a href="QS.html">Quem Somos</a></li>
-      </ul>
-    </section>
-
     <section id="conteudo-principal">
-      <h1 id="titulo"></h1>
-  
-      
+      <div class="top">
+        <a href="../index.html" id="voltar"><img src="../src/assets/caret-left.svg" alt="" srcset=""></a>
+        <h1 id="titulo"></h1>
+      </div>
+
       <div id="grafico-container">
         <canvas id="grafico"></canvas>
       </div>
-  
+
       <h2>Sobre o Projeto</h2>
       <p id="descricao"></p>
     </section>
+
+
+    <section id="menu-lateral">
+      <h2>Enviar Dados</h2>
+      <form id="send-data-form">
+      </form>
+    </section>
+
+
   </main>
 
   <footer>
-    <p>© 2025 Smart Etec — © 2025 Smart Etec — Etec de Campo Limpo Paulista — 2°AI</p>
+    <p>© 2025 Smart Etec — Etec de Campo Limpo Paulista — 2°AI</p>
   </footer>
 
+  <script src="../scripts/tema.js"></script>
   <script src="../scripts/fetchData.js"></script>
   <script src="../scripts/fetchNome.js"></script>
 </body>

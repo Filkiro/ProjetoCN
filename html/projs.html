@@ -14,7 +14,7 @@
 <body>
 
   <header>
-    <h1><span>Smart Etec</span></h1>
+    <h1><span>EtecSmart</span></h1>
 
     <button id="toggle-theme" class="theme-toggle">
       <img src="../src/assets/brightness-down.svg" alt="Tema Claro" class="icon-sun">
@@ -33,19 +33,25 @@
         <canvas id="grafico"></canvas>
       </div>
 
-      <h2>Sobre o Projeto</h2>
-      <p id="descricao"></p>
+      <div>
+        <h2>Sobre o Projeto</h2>
+        <p id="descricao"></p>
+      </div>
+      <hr>
 
-      <h2>Código do Projeto</h2>
+      <div>
 
-      <div class="code-container">
-        <div class="codeH">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <span class="code-title">codigo.ino</span>
+        <h2>Código do Projeto</h2>
+        
+        <div class="code-container">
+          <div class="codeH">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-title">codigo.ino</span>
+          </div>
+          <pre><code id="projectCode" class="language-javascript"></code></pre>
         </div>
-        <pre><code id="projectCode" class="language-javascript"></code></pre>
       </div>
     </section>
 
@@ -60,7 +66,7 @@
   </main>
 
   <footer>
-    <p>© 2025 Smart Etec — Etec de Campo Limpo Paulista — 2°AI</p>
+    <p>© 2025 EtecSmart — Etec de Campo Limpo Paulista — 2°AI</p>
   </footer>
 
   <script src="../scripts/tema.js"></script>

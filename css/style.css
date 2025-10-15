@@ -33,7 +33,30 @@ header h1 {
 }
 
 header h1 span {
-  color: #2B54D2;
+  background: linear-gradient(270deg, #2B54D2, #4212b2, #06184B, #5075BE, #2B54D2);
+  background-size: 600% 600%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 10s ease infinite;
+  font-weight: bold;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 section {
@@ -207,13 +230,10 @@ body.dark p{
 }
 
 body.dark header {
-  background-color: #06184B;
+  background-color: #0d162e;
   color: #f5f5f5;
 }
 
-body.dark header h1 span {
-  color: #426ceb;
-}
 
 body.dark main section {
   background-color: #1a1e2e;
@@ -260,7 +280,7 @@ body.dark #loading {
   color: #2B54D2;
 }
 body.dark footer {
-  background-color: #06184B;
+  background-color: #0d162e;
   color: #d1d1d1;
 }
 
@@ -304,21 +324,22 @@ body.dark footer {
   border-radius: 1000px;
   cursor: pointer;
   z-index: 1000;
-  transition: all 0.9s ease;
+  transition: all 0.4s ease;
   background-color: #2B54D2;
   max-width: 38px;
   max-height: 38px;
 }
 
 .theme-toggle:hover {
-  transform: scale(1.1);
-  transition: all 0.9s ease;
+  transform: scale(1.2);
+  transition: all 0.4s ease;
+  box-shadow: #2B54D2 0 0 10px, #1d41ad 0 0 20px, #0e3abe 0 0 30px;
 }
 
 .theme-toggle img {
   width: 28px;
   height: 28px;
-  display: none;
+  display: none;  
 }
 
 body .icon-sun {

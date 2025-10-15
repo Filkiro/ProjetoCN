@@ -28,14 +28,36 @@ header {
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #06184B;
 }
 
 header h1 span {
-  color: #2B54D2;
+  background: linear-gradient(270deg, #2B54D2, #4212b2, #06184B, #5075BE, #2B54D2);
+  background-size: 600% 600%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 10s ease infinite;
+  font-weight: bold;
 }
 
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /* Tema Toggle */
 .theme-toggle {
   padding: 5px;
@@ -49,7 +71,9 @@ header h1 span {
 }
 
 .theme-toggle:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  transition: all 0.4s ease;
+  box-shadow: #2B54D2 0 0 10px, #1d41ad 0 0 20px, #0e3abe 0 0 30px;
 }
 
 .theme-toggle img {
@@ -77,6 +101,15 @@ main {
   padding: 30px;
   max-width: 1200px;
   margin: 0 auto;
+}
+h2{
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+hr{
+  border: 1px solid #b8b8b8;
+  margin: 0 20px;
 }
 
 /* Conteúdo principal */
@@ -249,13 +282,10 @@ body.dark {
 }
 
 body.dark header {
-  background-color: #06184B;
+  background-color: #0d162e;
   color: #f5f5f5;
 }
 
-body.dark header h1 span {
-  color: #426ceb;
-}
 
 body.dark #conteudo-principal,
 body.dark #menu-lateral {
@@ -279,8 +309,12 @@ body.dark #lista-lateral a:hover {
 }
 
 body.dark footer {
-  background-color: #06184B;
+  background-color: #0d162e;
   color: #d1d1d1;
+}
+body.dark hr{
+  border: 1px solid #505050;
+  margin: 0 20px;
 }
 
 /* Responsividade */

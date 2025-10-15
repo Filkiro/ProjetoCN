@@ -331,4 +331,27 @@ body.dark hr{
     height: auto;
     margin-top: 20px;
   }
+  @media (max-width: 768px) {
+  .code-container {
+    border-radius: 10px;
+  }
+
+  .codeH {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  pre {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  #grafico {
+    height: 200px !important;
+  }
+
+  #grafico-container {
+    padding: 0.5rem;
+  }
+} 
 }

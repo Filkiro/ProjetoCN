@@ -124,6 +124,13 @@ main {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 20px;
   border: 1px solid #e0e6f0;
+  position: fixed;
+  right: 30px;
+  top: 120px;
+  min-width: 30vw;
+  height: auto; 
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 #menu-lateral h2 {
@@ -283,5 +290,11 @@ body.dark footer {
   }
   header h1 {
     font-size: 1.8rem;
+  }
+  #menu-lateral {
+    position: static;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
   }
 }

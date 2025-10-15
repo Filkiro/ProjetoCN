@@ -1,39 +1,55 @@
+// Função principal: carrega e inicializa o projeto
 async function carregarProjeto() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
   if (!id) return;
 
   try {
+    // --- Carrega informações do projeto local ---
     const response = await fetch("/src/projetos.json");
     const projetos = await response.json();
     const projeto = projetos[id];
+
     if (!projeto) {
       document.body.innerHTML = "<h2>Projeto não encontrado.</h2>";
       return;
     }
 
+    // --- Exibe nome e descrição ---
     document.getElementById("titulo").textContent = projeto.nome;
     document.getElementById("descricao").textContent = projeto.descricao;
 
-    // Função para puxar dados do ThingSpeak
-    async function getApiData() {
-      const apiResponse = await fetch(projeto.api);
-      const apiData = await apiResponse.json();
-      return apiData;
+    // --- Exibe o código-fonte, se existir ---
+    const codeContainer = document.querySelector(".code-container");
+    const codeBlock = document.getElementById("projectCode");
+
+    if (projeto.code) {
+      codeBlock.textContent = projeto.code.trim();
+      Prism.highlightElement(codeBlock); // aplica sintaxe colorida
+      codeContainer.style.display = "block";
+    } else {
+      codeContainer.style.display = "none";
     }
 
-    // Inicializa gráfico
-    const ctx = document.getElementById("grafico").getContext("2d");
-    let chart;
+    // --- Função auxiliar para buscar dados do ThingSpeak ---
+    async function obterDadosThingSpeak() {
+      const apiResponse = await fetch(projeto.api);
+      return await apiResponse.json();
+    }
 
-    async function atualizarChart() {
-      const apiData = await getApiData();
-      const feeds = apiData.feeds;
+    // --- Configuração do gráfico ---
+    const ctx = document.getElementById("grafico").getContext("2d");
+    let grafico;
+
+    async function atualizarGrafico() {
+      const dadosApi = await obterDadosThingSpeak();
+      const feeds = dadosApi.feeds;
       if (!feeds.length) return;
 
-      const fields = Object.keys(feeds[0]).filter(f => f.includes("field"));
+      const fields = Object.keys(feeds[0]).filter(f => f.startsWith("field"));
       const labels = feeds.map(f => new Date(f.created_at).toLocaleTimeString());
-      const datasets = fields.map((field, i) => ({
+
+      const conjuntos = fields.map(field => ({
         label: field,
         data: feeds.map(f => Number(f[field])),
         borderColor: "#2B54D2",
@@ -41,86 +57,101 @@ async function carregarProjeto() {
         fill: false,
       }));
 
-      if(chart) {
-        chart.data.labels = labels;
-        chart.data.datasets = datasets;
-        chart.update();
+      if (grafico) {
+        grafico.data.labels = labels;
+        grafico.data.datasets = conjuntos;
+        grafico.update();
       } else {
-        chart = new Chart(ctx, {
+        grafico = new Chart(ctx, {
           type: "line",
-          data: { labels, datasets },
-          options: { responsive: true, maintainAspectRatio: false }
+          data: { labels, datasets: conjuntos },
+          options: { responsive: true, maintainAspectRatio: false },
         });
       }
     }
 
-    await atualizarChart();
+    // Renderiza o gráfico pela primeira vez
+    await atualizarGrafico();
 
-    // Cria form dinamicamente baseado nos fields
+    // --- Cria o formulário de envio dinâmico ---
+    const dadosApi = await obterDadosThingSpeak();
+    const campos = Object.keys(dadosApi.feeds[0] || {}).filter(f => f.startsWith("field"));
+
     const formContainer = document.createElement("div");
     formContainer.id = "form-container";
     formContainer.style.display = "flex";
     formContainer.style.flexDirection = "column";
     formContainer.style.gap = "10px";
 
-    const apiData = await getApiData();
-    const fields = Object.keys(apiData.feeds[0] || {}).filter(f => f.includes("field"));
-
-    fields.forEach(field => {
+    // Cria um input para cada campo disponível no canal
+    campos.forEach(field => {
       const input = document.createElement("input");
       input.type = "number";
-      input.placeholder = field;
+      input.placeholder = `Campo ${field.replace("field", "")}`;
       input.id = field;
-      input.style.padding = "8px";
-      input.style.borderRadius = "8px";
-      input.style.border = "1px solid #ccc";
+      input.required = true;
+      input.style.cssText = `
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      `;
       formContainer.appendChild(input);
     });
 
-    const submitBtn = document.createElement("button");
-    submitBtn.textContent = "Enviar";
-    submitBtn.style.padding = "10px";
-    submitBtn.style.borderRadius = "8px";
-    submitBtn.style.border = "none";
-    submitBtn.style.backgroundColor = "#2B54D2";
-    submitBtn.style.color = "#fff";
-    submitBtn.style.fontWeight = "bold";
-    submitBtn.style.cursor = "pointer";
+    // Botão de envio
+    const botaoEnviar = document.createElement("button");
+    botaoEnviar.textContent = "Enviar";
+    botaoEnviar.style.cssText = `
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background-color: #2B54D2;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    `;
+    formContainer.appendChild(botaoEnviar);
 
-    formContainer.appendChild(submitBtn);
+    // Adiciona o formulário ao menu lateral
+    const menuLateral = document.getElementById("menu-lateral");
+    menuLateral.appendChild(formContainer);
 
-    // Adiciona o form no menu-lateral
-    const menu = document.getElementById("menu-lateral");
-    menu.appendChild(formContainer);
-
-    submitBtn.addEventListener("click", async () => {
+    // --- Lógica de envio para o ThingSpeak ---
+    botaoEnviar.addEventListener("click", async () => {
       const writeKey = projeto.apiWrite;
+      if (!writeKey) {
+        alert("API de escrita não encontrada para este projeto!");
+        return;
+      }
+
+      // Monta os parâmetros de envio
       const params = new URLSearchParams();
-      fields.forEach(f => {
-        const val = document.getElementById(f).value;
-        if(val) params.append(f, val);
+      campos.forEach(campo => {
+        const valor = document.getElementById(campo).value;
+        if (valor) params.append(campo, valor);
       });
 
       const url = `https://api.thingspeak.com/update?api_key=${writeKey}&${params.toString()}`;
 
       try {
-        const res = await fetch(url);
-        const text = await res.text();
-        console.log("Resposta ThingSpeak:", text);
+        const resposta = await fetch(url);
+        const texto = await resposta.text();
+        console.log("Resposta ThingSpeak:", texto);
 
-        // Atualiza gráfico após envio
-        await atualizarChart();
-      } catch(err) {
-        console.error("Erro ao enviar dados:", err);
+        // Atualiza o gráfico após envio
+        await atualizarGrafico();
+      } catch (erro) {
+        console.error("Erro ao enviar dados:", erro);
       }
     });
 
-    // Atualização automática a cada 15 segundos
-    setInterval(atualizarChart, 15000);
+    // --- Atualização automática do gráfico ---
+    setInterval(atualizarGrafico, 15000);
 
-  } catch(err) {
-    console.error("Erro ao carregar projeto:", err);
+  } catch (erro) {
+    console.error("Erro ao carregar projeto:", erro);
   }
 }
 
+// Inicia o carregamento
 carregarProjeto();

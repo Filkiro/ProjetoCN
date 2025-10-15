@@ -42,10 +42,8 @@ async function carregarProjetos() {
       })
     );
 
-    // Remove o loading
     loading.remove();
 
-    // Adiciona os cards de uma só vez
     const fragment = document.createDocumentFragment();
 
     resultados.forEach(({ id, sala, nome, resultado }) => {
@@ -59,7 +57,7 @@ async function carregarProjetos() {
       pNome.textContent = `Projeto: ${nome}`;
       pNome.style.fontWeight = "bold";
       const pResultado = document.createElement("p");
-      pResultado.textContent = `Resultado: ${resultado}`;
+      pResultado.textContent = `Último Resultado: ${resultado}`;
 
       div.appendChild(pSala);
       div.appendChild(pNome);

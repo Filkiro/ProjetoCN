@@ -5,7 +5,9 @@
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666"
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
   "2": {
     "sala": "Jardim",
@@ -13,62 +15,98 @@
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666"
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
-    "3": {
+  "3": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666"
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
-    "4": {
+  "4": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
-    "5": {
+  "5": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
-    "6": {
+  "6": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
-    "7": {
+  "7": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
-    "8": {
+  "8": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
-    "9": {
+  "9": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
-    "10": {
+  "10": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   },
-    "11": {
-    "sala": "101",
+  "11": {
+    "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10"
+    "api": "https://api.thingspeak.com/channels/3035666/fields/1.json?api_key=QC6JQEJXRZR8AFOB&results=10",
+    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "channel": "3035666",
+    "code": "#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\nLiquidCrystal_I2C lcd(0x27, 16, 2);\n\nvoid setup() {\n  lcd.init();\n  lcd.backlight();\n  lcd.print(\"Temperatura:\");\n}\n\nvoid loop() {\n  int temp = analogRead(A0);\n  lcd.setCursor(0, 1);\n  lcd.print(temp);\n  lcd.print(\" C  \");\n  delay(1000);\n}"
+
   }
 }

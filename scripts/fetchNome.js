@@ -1,7 +1,6 @@
 const container = document.getElementById("lista-projetos");
 
 async function carregarProjetos() {
-  // Cria o elemento de loading
   const loading = document.createElement("div");
   loading.id = "loading";
   loading.textContent = "Carregando projetos...";
@@ -19,12 +18,12 @@ async function carregarProjetos() {
       ([a], [b]) => Number(a) - Number(b)
     );
 
-    // Mapeia as promessas de API para cada projeto
     const resultados = await Promise.all(
       entradas.map(async ([id, projeto]) => {
         const sala = projeto.sala || "N/A";
         const nome = projeto.nome || "Sem nome";
         let resultado = "Sem dados";
+        let ativo = false;
 
         try {
           const apiResponse = await fetch(projeto.api);
@@ -33,12 +32,20 @@ async function carregarProjetos() {
           if (apiData.feeds && apiData.feeds.length > 0) {
             const ultimoFeed = apiData.feeds.at(-1);
             resultado = ultimoFeed.field1 || "N/A";
+
+            // Verifica o tempo desde o último envio
+            const ultimaData = new Date(ultimoFeed.created_at);
+            const agora = new Date();
+            const diffDias = (agora - ultimaData) / (1000 * 60 * 60 * 24);
+
+            // Se o último envio foi há menos de 14 dias → ativo
+            ativo = diffDias <= 14;
           }
         } catch {
           resultado = "Erro ao obter dados";
         }
 
-        return { id, sala, nome, resultado };
+        return { id, sala, nome, resultado, ativo };
       })
     );
 
@@ -46,22 +53,30 @@ async function carregarProjetos() {
 
     const fragment = document.createDocumentFragment();
 
-    resultados.forEach(({ id, sala, nome, resultado }) => {
+    resultados.forEach(({ id, sala, nome, resultado, ativo }) => {
       const div = document.createElement("div");
       div.classList.add("projeto-card");
       div.style.cursor = "pointer";
 
       const pSala = document.createElement("p");
       pSala.textContent = `Comôdo: ${sala}`;
+
       const pNome = document.createElement("p");
       pNome.textContent = `Projeto: ${nome}`;
       pNome.style.fontWeight = "bold";
+
       const pResultado = document.createElement("p");
       pResultado.textContent = `Último Resultado: ${resultado}`;
+
+      const status = document.createElement("p");
+      status.textContent = ativo ? "🟢 Ativo" : "🔴 Inativo";
+      status.style.fontWeight = "bold";
+      status.style.color = ativo ? "green" : "red";
 
       div.appendChild(pSala);
       div.appendChild(pNome);
       div.appendChild(pResultado);
+      div.appendChild(status);
 
       div.addEventListener("click", () => {
         window.location.href = `/html/projs.html?id=${id}`;
@@ -70,7 +85,6 @@ async function carregarProjetos() {
       fragment.appendChild(div);
     });
 
-    // Adiciona tudo de uma vez
     container.appendChild(fragment);
 
   } catch (erro) {

@@ -1,4 +1,3 @@
-// Função principal: carrega e inicializa o projeto
 async function carregarProjeto() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
@@ -124,7 +123,7 @@ async function carregarProjeto() {
         return;
       }
 
-      // Monta os parâmetros de envio
+      // Monta os parâmetros de envio com todos os campos
       const params = new URLSearchParams();
       campos.forEach(campo => {
         const valor = document.getElementById(campo).value;

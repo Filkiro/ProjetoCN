@@ -33,12 +33,11 @@ async function carregarProjetos() {
             const ultimoFeed = apiData.feeds.at(-1);
             resultado = ultimoFeed.field1 || "N/A";
 
-            // Verifica o tempo desde o último envio
+            // Verifica data do último envio
             const ultimaData = new Date(ultimoFeed.created_at);
             const agora = new Date();
             const diffDias = (agora - ultimaData) / (1000 * 60 * 60 * 24);
 
-            // Se o último envio foi há menos de 14 dias → ativo
             ativo = diffDias <= 14;
           }
         } catch {

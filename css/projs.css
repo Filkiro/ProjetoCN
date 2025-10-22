@@ -277,7 +277,7 @@ footer {
   padding: 0px;
 }
 iframe{
-  border-radius: 15px;
+  border-radius: 5px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: block;
   margin: auto;

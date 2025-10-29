@@ -9,6 +9,20 @@ async function carregarProjetos() {
   loading.style.fontSize = "18px";
   container.appendChild(loading);
 
+  async function inlineSVG(cardEl, url) {
+  const resp = await fetch(url);
+  let svg = await resp.text();
+
+  // remove fills para controlar via CSS (importante!)
+  svg = svg.replace(/fill=".*?"/gi, "");
+
+  const div = document.createElement("div");
+  div.classList.add("svg-wrapper");
+  div.innerHTML = svg;
+
+  cardEl.appendChild(div);
+}
+
   try {
     // Carrega o JSON local
     const resposta = await fetch("../src/projetos.json");
@@ -44,7 +58,7 @@ async function carregarProjetos() {
           resultado = "Erro ao obter dados";
         }
 
-        return { id, sala, nome, resultado, ativo };
+        return { id, sala, nome, resultado, ativo, icon: projeto.icon};
       })
     );
 
@@ -52,34 +66,42 @@ async function carregarProjetos() {
 
     const fragment = document.createDocumentFragment();
 
-    resultados.forEach(({ id, sala, nome, resultado, ativo }) => {
-      const div = document.createElement("div");
-      div.classList.add("projeto-card");
-      div.style.cursor = "pointer";
+resultados.forEach(({ id, sala, nome, resultado, ativo, icon }) => {
+  const div = document.createElement("div");
+  div.classList.add("projeto-card");
+  div.style.cursor = "pointer";
 
-      const pSala = document.createElement("p");
-      pSala.textContent = `Comôdo: ${sala}`;
+  const img = document.createElement("svg");
+  img.src = icon || "./src/assets/icones/default.svg";
+  img.alt = sala;
+  img.classList.add("projeto-icon");
+  div.appendChild(img);
 
-      const pNome = document.createElement("p");
-      pNome.textContent = `Projeto: ${nome}`;
-      pNome.style.fontWeight = "bold";
+  const pSala = document.createElement("p");
+  pSala.textContent = `Comôdo: ${sala}`;
 
-      const pResultado = document.createElement("p");
-      pResultado.textContent = `Último Resultado: ${resultado}`;
+  const pNome = document.createElement("p");
+  pNome.textContent = `Projeto: ${nome}`;
+  pNome.style.fontWeight = "bold";
 
-      const status = document.createElement("p");
-      status.textContent = ativo ? "🟢 Ativo" : "🔴 Inativo";
-      status.style.fontWeight = "bold";
-      status.style.color = ativo ? "green" : "red";
+  const pResultado = document.createElement("p");
+  pResultado.textContent = `Último Resultado: ${resultado}`;
 
-      div.appendChild(pSala);
-      div.appendChild(pNome);
-      div.appendChild(pResultado);
-      div.appendChild(status);
+  const status = document.createElement("p");
+  status.textContent = ativo ? "🟢 Ativo" : "🔴 Inativo";
+  status.style.fontWeight = "bold";
+  status.style.color = ativo ? "green" : "red";
 
-      div.addEventListener("click", () => {
-        window.location.href = `/html/projs.html?id=${id}`;
-      });
+  div.appendChild(pSala);
+  div.appendChild(pNome);
+  div.appendChild(pResultado);
+  div.appendChild(status);
+
+  inlineSVG(div, icon);
+  
+  div.addEventListener("click", () => {
+    window.location.href = `/html/projs.html?id=${id}`;
+  });
 
       fragment.appendChild(div);
     });

@@ -282,6 +282,7 @@ iframe{
   display: block;
   margin: auto;
   width: 50vw;
+  max-width: 600px;
   height:500px;
   min-width: 100px;
   border-radius: 20px;

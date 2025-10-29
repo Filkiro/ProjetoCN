@@ -6,7 +6,8 @@
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   },
   "2": {
     "sala": "Jardim",
@@ -15,87 +16,97 @@
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/jardim.svg"
   },
-  "3": {
+    "3": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   },
-  "4": {
+    "4": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   },
-  "5": {
+    "5": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   },
-  "6": {
+    "6": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   },
-  "7": {
+    "7": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   },
-  "8": {
+    "8": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   },
-  "9": {
+    "9": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   },
-  "10": {
+    "10": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   },
-  "11": {
+    "11": {
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417"
+    "link": "https://wokwi.com/projects/445548944599740417",
+    "icon": "./src/assets/icons/temperatura.svg"
   }
 }

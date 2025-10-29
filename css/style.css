@@ -136,15 +136,50 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+.svg-wrapper {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  max-width: 100px;
+  min-width: 30px;
+  width: 100%;
+  opacity: .25;
+  pointer-events: none;
+  transition: .3s ease;
+}
+
+.svg-wrapper svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* tema escuro */
+body.dark .svg-wrapper {
+  color: #fff;
+}
+
+/* tema claro */
+body:not(.dark) .svg-wrapper {
+  color: #000000;
+}
+
+.projeto-card:hover .svg-wrapper {
+  opacity: .4;
+}
 
 /* Cards */
 .projeto-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding: 20px;
   border-radius: 15px;
   cursor: pointer;
   overflow: hidden;
   background-color: #f5f7ff;
+  backdrop-filter: blur(3px);
+  background-blend-mode: soft-light;
   color: #06184B;
   border: 1px solid #ccc;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
@@ -180,6 +215,7 @@ footer {
   opacity: 0.2;
   animation: shineMove 1.5s forwards;
 }
+
 
 @keyframes shineMove {
   0% { left: -100%; }

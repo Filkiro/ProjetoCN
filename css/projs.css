@@ -276,6 +276,12 @@ footer {
   height: 40px;
   padding: 0px;
 }
+p.info{
+  font-size: 0.9rem;
+  color: #727272;
+  margin: 5px;
+  text-align: center;
+}
 iframe{
   border-radius: 5px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);

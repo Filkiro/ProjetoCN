@@ -85,8 +85,40 @@ async function carregarProjeto() {
         grafico = new Chart(ctx, {
           type: "line",
           data: { labels, datasets: conjuntos },
-          options: { responsive: true, maintainAspectRatio: false },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          
+            plugins: {
+              legend: {
+                onClick: (e, legendItem, legend) => {
+                  const ci = legend.chart;
+                  const index = legendItem.datasetIndex;
+                
+                  // Se algum já está isolado
+                  const onlyOneVisible = ci.data.datasets.some((ds, i) =>
+                    ci.isDatasetVisible(i) && i !== index
+                  );
+                
+                  // Se clicou no único visível → mostra todos
+                  if (!onlyOneVisible && ci.isDatasetVisible(index)) {
+                    ci.data.datasets.forEach((ds, i) => {
+                      ci.setDatasetVisibility(i, true);
+                    });
+                  } else {
+                    // Esconde todos, mostra só esse
+                    ci.data.datasets.forEach((ds, i) => {
+                      ci.setDatasetVisibility(i, i === index);
+                    });
+                  }
+                
+                  ci.update();
+                }
+              }
+            }
+          }
         });
+
       }
     }
 

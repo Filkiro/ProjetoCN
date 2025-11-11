@@ -1,13 +1,13 @@
 {
-  "1": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/temperatura.svg"
+  "1": { 
+    "sala": "Sala de Aula",
+    "nome": "Salas de Aula mais confortáveis",
+    "descricao": "Projeto controla a temperatura do ar condicionado.",
+    "api": "https://api.thingspeak.com/channels/3107983/feeds.json?api_key=LEJ9ML5BABTT60IH&results=10",
+    "apiWrite":"U054OSR8VUYRC9M2",
+    "channel": "3107983",
+    "link": "https://wokwi.com/projects/445551588623209473",
+    "icon": "./src/assets/icons/sala_de_aula.svg"
   },
   "2": {
     "sala": "Jardim",
@@ -30,14 +30,14 @@
     "icon": "./src/assets/icons/temperatura.svg"
   },
     "4": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/temperatura.svg"
+    "sala": "Refeitório",
+    "nome": "REFEITÓRIO SEGURO: monitoramento de temperatura, umidade e gás",
+    "descricao": "Sensor de vazamento de gás que envia os dados do valor do gás, temperatura e umidade para o thingSpeak, quando é detectado um vazamento, um led acende e o buzzer toca.",
+    "api": "https://api.thingspeak.com/channels/3116652/feeds.json?api_key=78JABVHUUXN7C2AH&results=10",
+    "apiWrite":"HWJZJEOM1N7O7K6D",
+    "channel": "3116652",
+    "link": "https://wokwi.com/projects/445608433352541185",
+    "icon": "./src/assets/icons/refeitorio.svg"
   },
     "5": {
     "sala": "Jardim",
@@ -64,9 +64,9 @@
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
     "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
+    "apiWrite":"1I6445WHVN40O7J3",
     "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
+    "link": "https://wokwi.com/projects/445551588623209473",
     "icon": "./src/assets/icons/temperatura.svg"
   },
     "8": {

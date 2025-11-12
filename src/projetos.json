@@ -6,7 +6,7 @@
     "api": "https://api.thingspeak.com/channels/3107983/feeds.json?api_key=LEJ9ML5BABTT60IH&results=10",
     "apiWrite":"U054OSR8VUYRC9M2",
     "channel": "3107983",
-    "link": "https://wokwi.com/projects/445551588623209473",
+    "link": "https://wokwi.com/projects/447283263915153409",
     "icon": "./src/assets/icons/sala_de_aula.svg"
   },
   "2": {
@@ -53,7 +53,7 @@
     "sala": "Jardim",
     "nome": "Monitoramento de Temperatura",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
+    "api": "https://api.thingspeak.com/channels/3129373/feeds.json?api_key=6J23N41I7PGCM9PO&results=10",
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
     "link": "https://wokwi.com/projects/445548944599740417",
@@ -61,23 +61,23 @@
   },
     "7": {
     "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
+    "nome": "Irriga Etecamp",
+    "descricao": "O projeto é um sistema de Irrigação para o Jardim da etec de campo limpo Paulista, ele funciona coletando dados de sensores (umidade do solo, umidade atmosfera e temperatura), para determinar quando o Jardim deve ser irrigado",
+    "api": "https://api.thingspeak.com/channels/3129373/feeds.json?api_key=6J23N41I7PGCM9PO&results=10",
     "apiWrite":"1I6445WHVN40O7J3",
-    "channel": "3035666",
+    "channel": "3129373",
     "link": "https://wokwi.com/projects/445551588623209473",
-    "icon": "./src/assets/icons/temperatura.svg"
+    "icon": "./src/assets/icons/jardim.svg"
   },
     "8": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
+    "sala": "Banheiro",
+    "nome": "Monitoramento Inteligente de Banheiros com IOT",
     "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/temperatura.svg"
+    "api": "https://api.thingspeak.com/channels/3159115/feeds.json?results=10",
+    "apiWrite":"ST0ZK4NA58XZC31A",
+    "channel": "3159115",
+    "link": "https://wokwi.com/projects/446882891218832385",
+    "icon": "./src/assets/icons/banheiro.svg"
   },
     "9": {
     "sala": "Jardim",

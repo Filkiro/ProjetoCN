@@ -48,79 +48,106 @@ async function carregarProjeto() {
     let grafico;
 
     async function atualizarGrafico() {
-      const dadosApi = await obterDadosThingSpeak();
-      const feeds = dadosApi.feeds;
-      if (!feeds.length) return;
+  const dadosApi = await obterDadosThingSpeak();
+  const feeds = dadosApi.feeds;
+  if (!feeds.length) return;
 
-      const fields = Object.keys(feeds[0]).filter(
-        (f) => f.startsWith("field") && f !== "field8"
-      );
-      const labels = feeds.map((f) =>
-        new Date(f.created_at).toLocaleTimeString()
-      );
+  const fields = Object.keys(feeds[0]).filter(
+    (f) => f.startsWith("field") && f !== "field8"
+  );
+  const labels = feeds.map((f) =>
+    new Date(f.created_at).toLocaleTimeString()
+  );
 
-      const cores = [
-        "#2B54D2",
-        "#D24E2B",
-        "#2BD259",
-        "#D22BC4",
-        "#FFD22B",
-        "#2BD2C4",
-        "#A62BD2",
-      ];
+  const cores = [
+    "#2B54D2",
+    "#D24E2B",
+    "#2BD259",
+    "#D22BC4",
+    "#FFD22B",
+    "#2BD2C4",
+    "#A62BD2",
+  ];
 
-      const conjuntos = fields.map((field, index) => ({
-        label: field,
-        data: feeds.map((f) => Number(f[field])),
-        borderColor: cores[index % cores.length],
-        backgroundColor: `${cores[index % cores.length]}33`,
-        fill: false,
-      }));
+  function capitalizar(texto) {
+    if (!texto) return "";
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
+  }
 
-      if (grafico) {
-        grafico.data.labels = labels;
-        grafico.data.datasets = conjuntos;
-        grafico.update();
-      } else {
-        grafico = new Chart(ctx, {
-          type: "line",
-          data: { labels, datasets: conjuntos },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-          
-            plugins: {
-              legend: {
-                onClick: (e, legendItem, legend) => {
-                  const ci = legend.chart;
-                  const index = legendItem.datasetIndex;
-                
-                  // Se algum já está isolado
-                  const onlyOneVisible = ci.data.datasets.some((ds, i) =>
-                    ci.isDatasetVisible(i) && i !== index
-                  );
-                
-                  // Se clicou no único visível → mostra todos
-                  if (!onlyOneVisible && ci.isDatasetVisible(index)) {
-                    ci.data.datasets.forEach((ds, i) => {
-                      ci.setDatasetVisibility(i, true);
-                    });
-                  } else {
-                    // Esconde todos, mostra só esse
-                    ci.data.datasets.forEach((ds, i) => {
-                      ci.setDatasetVisibility(i, i === index);
-                    });
-                  }
-                
-                  ci.update();
-                }
+  const conjuntos = fields.map((field, index) => {
+    const nomeCampoOriginal = dadosApi.channel[field] || field;
+    const nomeCampo = capitalizar(nomeCampoOriginal);
+
+    // 🔹 Ignora valores nulos ou vazios
+    const dadosLimpos = feeds.map((f) => {
+      const valor = f[field];
+      return valor !== null && valor !== "" ? Number(valor) : null;
+    });
+
+    return {
+      label: nomeCampo,
+      data: dadosLimpos,
+      borderColor: cores[index % cores.length],
+      backgroundColor: `${cores[index % cores.length]}33`,
+      spanGaps: true, // 🔹 Faz o gráfico “pular” os pontos nulos suavemente
+      fill: false,
+    };
+  });
+
+  if (grafico) {
+    // 🔹 Salva o estado de visibilidade atual antes de atualizar
+    const visibilidade = grafico.data.datasets.map((_, i) =>
+      grafico.isDatasetVisible(i)
+    );
+
+    grafico.data.labels = labels;
+    grafico.data.datasets = conjuntos;
+
+    // 🔹 Restaura a visibilidade anterior
+    visibilidade.forEach((visivel, i) => {
+      grafico.setDatasetVisibility(i, visivel);
+    });
+
+    grafico.update();
+  } else {
+    grafico = new Chart(ctx, {
+      type: "line",
+      data: { labels, datasets: conjuntos },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            onClick: (e, legendItem, legend) => {
+              const ci = legend.chart;
+              const index = legendItem.datasetIndex;
+
+              const onlyOneVisible = ci.data.datasets.some((ds, i) =>
+                ci.isDatasetVisible(i) && i !== index
+              );
+
+              if (!onlyOneVisible && ci.isDatasetVisible(index)) {
+                ci.data.datasets.forEach((ds, i) => {
+                  ci.setDatasetVisibility(i, true);
+                });
+              } else {
+                ci.data.datasets.forEach((ds, i) => {
+                  ci.setDatasetVisibility(i, i === index);
+                });
               }
-            }
-          }
-        });
 
-      }
-    }
+              ci.update();
+            },
+          },
+        },
+        elements: {
+          line: { tension: 0.3 }, // suaviza linhas
+        },
+      },
+    });
+  }
+}
+
 
     await atualizarGrafico();
 
@@ -186,22 +213,29 @@ async function carregarProjeto() {
       await atualizarGrafico();
     }
 
-    async function enviarField8(valor) {
-      const writeKey = projeto.apiWrite;
-      if (!writeKey) {
-        alert("API de escrita não encontrada!");
-        return;
-      }
+    botaoEnviar.addEventListener("click", async () => {
+      if (botaoEnviar.disabled) return;
 
-      const url = `https://api.thingspeak.com/update?api_key=${writeKey}&field8=${valor}`;
-      const resposta = await fetch(url);
-      console.log(`Field8 (${valor}) enviado:`, await resposta.text());
-      await atualizarGrafico();
-    }
+      botaoEnviar.disabled = true;
+      let tempoRestante = 16;
+      const textoOriginal = botaoEnviar.textContent;
 
-    botaoEnviar.addEventListener("click", enviarCamposNormais);
-    botaoLigar.addEventListener("click", () => enviarField8(1));
-    botaoDesligar.addEventListener("click", () => enviarField8(0));
+      // Mostra contagem regressiva
+      botaoEnviar.textContent = `Aguarde ${tempoRestante}s...`;
+
+      const intervalo = setInterval(() => {
+        tempoRestante--;
+        botaoEnviar.textContent = `Aguarde ${tempoRestante}s...`;
+        if (tempoRestante <= 0) {
+          clearInterval(intervalo);
+          botaoEnviar.disabled = false;
+          botaoEnviar.textContent = textoOriginal;
+        }
+      }, 1000);
+    
+      await enviarCamposNormais();
+    });
+
 
     setInterval(atualizarGrafico, 15000);
   } catch (erro) {

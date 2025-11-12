@@ -88,7 +88,7 @@ resultados.forEach(({ id, sala, nome, resultado, ativo, icon }) => {
   pResultado.textContent = `Último Resultado: ${resultado}`;
 
   const status = document.createElement("p");
-  status.textContent = ativo ? "🟢 Ativo" : "🔴 Inativo";
+  status.textContent = ativo ? "Projeto Ativo" : "Projeto Inativo";
   status.style.fontWeight = "bold";
   status.style.color = ativo ? "green" : "red";
 

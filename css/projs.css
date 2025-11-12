@@ -352,8 +352,7 @@ body.dark hr{
   iframe{
     display: none;
   }
-  @media (max-width: 768px) {
-  .code-container {
+    .code-container {
     border-radius: 10px;
   }
 
@@ -363,6 +362,5 @@ body.dark hr{
 
   #grafico-container {
     padding: 0.5rem;
-  }
-} 
+  } 
 }

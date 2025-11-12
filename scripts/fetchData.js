@@ -19,11 +19,45 @@ async function carregarProjeto() {
     document.getElementById("titulo").textContent = projeto.nome;
     document.getElementById("descricao").textContent = projeto.descricao;
     const iframe = document.querySelector(".code iframe");
-    if (projeto.link) {
-      iframe.src = projeto.link;
+
+    
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Remove o iframe, se existir
+      if (iframe) iframe.remove();
+    
+      // Cria um link substituto
+      if (projeto.link) {
+        const link = document.createElement("a");
+        link.href = projeto.link;
+        link.textContent = "Acesse o projeto aqui";
+        link.target = "_blank";
+      
+        // Estiliza o link
+        link.style.display = "inline-block";
+        link.style.padding = "12px 18px";
+        link.style.background = "#2B54D2";
+        link.style.color = "#fff";
+        link.style.borderRadius = "8px";
+        link.style.textDecoration = "none";
+        link.style.fontWeight = "bold";
+        link.style.textAlign = "center";
+        link.style.marginTop = "10px";
+      
+        // Insere o link no mesmo container onde o iframe estaria
+        const codeContainer = document.querySelector(".code");
+        codeContainer.appendChild(link);
+      }
     } else {
-      iframe.style.display = "none"; 
+      // No desktop, mostra o iframe normalmente
+      if (projeto.link) {
+        iframe.src = projeto.link;
+      } else {
+        iframe.style.display = "none";
+      }
     }
+
 
     // --- Remove o trecho do Prism.js ---
     // Antes havia:

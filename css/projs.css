@@ -350,7 +350,7 @@ body.dark hr{
     margin-top: 20px;
   }
   iframe{
-    width: 70vw;
+    display: none;
   }
   @media (max-width: 768px) {
   .code-container {

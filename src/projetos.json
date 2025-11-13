@@ -17,18 +17,19 @@
     "apiWrite":"RJXVRQ5ZTZ4OTNJI",
     "channel": "3035666",
     "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/jardim.svg"
-  },
-    "3": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
     "icon": "./src/assets/icons/temperatura.svg"
   },
+  "3": {
+    "sala": "Biblioteca",
+    "nome": "Sistema de Monitoramento Ambiental na Biblioteca Baseado em IoT",
+    "descricao": "Sistema de monitoramento ambiental que tem como objetivo, monitorar em tempo real os níveis de luminosidade e ruído dentro de uma biblioteca",
+    "api": "https://api.thingspeak.com/channels/3158659/feeds.json?api_key=FTKHCXSC2R8G52QY&results=10",
+    "apiWrite":"05LS3M4RKTCY5LW4",
+    "channel": "3158659",
+    "link": "https://wokwi.com/projects/447463480116337665",
+    "icon": "./src/assets/icons/biblioteca.svg"
+  },
+
     "4": {
     "sala": "Refeitório",
     "nome": "REFEITÓRIO SEGURO: monitoramento de temperatura, umidade e gás",

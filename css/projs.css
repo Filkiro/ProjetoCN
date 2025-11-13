@@ -349,10 +349,7 @@ body.dark hr{
     height: auto;
     margin-top: 20px;
   }
-  iframe{
-    display: none;
-  }
-    .code-container {
+  .code-container {
     border-radius: 10px;
   }
 

@@ -90,23 +90,23 @@
     "icon": "./src/assets/icons/temperatura.svg"
   },
     "10": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/temperatura.svg"
+    "sala": "Auditório",
+    "nome": "SmartAuditor",
+    "descricao": "O projeto visa monitorar a iluminação e ruídos durantes eventos com sensores feitos para isso, também há um sensor de movimento. Todos os dados de monitoramento é enviado ao ThingSpeak de forma online.",
+    "api": "https://api.thingspeak.com/channels/3151191/feeds.json?results=10",
+    "apiWrite":"1AXF0GAR4IVBT8OQ",
+    "channel": "3151191",
+    "link": "https://wokwi.com/projects/446199632568962049",
+    "icon": "./src/assets/icons/auditorio.svg"
   },
     "11": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/temperatura.svg"
+    "sala": "Laboratório de Química",
+    "nome": "Segurança e Conforto Térmico",
+    "descricao": "Um projeto que busca trazer alívio, conforto e um ambiente que proporciona aprendizado aos alunos da Etec de Campo Limpo Paulista no laboratório de química.",
+    "api": "https://api.thingspeak.com/channels/3163733/feeds.json?results=10",
+    "apiWrite":"HZ6MSKT6TYAKFZ7B",
+    "channel": "3163733",
+    "link": "https://wokwi.com/projects/447535609620011009",
+    "icon": "./src/assets/icons/quimica.svg"
   }
 }

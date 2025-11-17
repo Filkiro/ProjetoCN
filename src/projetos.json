@@ -51,14 +51,14 @@
     "icon": "./src/assets/icons/temperatura.svg"
   },
     "6": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3129373/feeds.json?api_key=6J23N41I7PGCM9PO&results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/temperatura.svg"
+    "sala": "Quadra",
+    "nome": "Automatização da Quadra de Esportes",
+    "descricao": "Sistema de monitoramento de luminosidade e chuva utilizando o simulador Wokwi e a plataforma ThingSpeak para coleta, armazenamento e visualização dos dados na nuvem.",
+    "api": "https://api.thingspeak.com/channels/3120998/feeds.json?api_key=5QQ4HG7ZHDSUH708&results=10",
+    "apiWrite":"6P0W5FCUV25P0TY0",
+    "channel": "3120998",
+    "link": "https://wokwi.com/projects/444733713468974081",
+    "icon": "./src/assets/icons/quadra.svg"
   },
     "7": {
     "sala": "Jardim",

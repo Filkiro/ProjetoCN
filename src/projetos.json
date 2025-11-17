@@ -81,14 +81,14 @@
     "icon": "./src/assets/icons/banheiro.svg"
   },
     "9": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
+    "sala": "Entrada",
+    "nome": "Monitorer",
+    "descricao": "Projeto que utiliza sensores de movimento com ESP32 para contar a quantidade de alunos entrando na escola e a distância média de cada um quando detectado.",
+    "api": "https://api.thingspeak.com/channels/3159020/feeds.json?api_key=22ZCIGP6DWLL7ZGE&results=10",
+    "apiWrite":"8HONTALKBSML822M",
+    "channel": "3159020",
     "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/temperatura.svg"
+    "icon": "./src/assets/icons/entrada.svg"
   },
     "10": {
     "sala": "Auditório",

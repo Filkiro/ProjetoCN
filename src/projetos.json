@@ -41,14 +41,14 @@
     "icon": "./src/assets/icons/refeitorio.svg"
   },
     "5": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/temperatura.svg"
+    "sala": "Pátio",
+    "nome": "Corredor/pátio",
+    "descricao": "Como automatizar a iluminação de um corredor ou pátio de forma eficiente e inteligente, utilizando sensores LDR e PIR em simulação IoT, para acionar a luz apenas quando houver pouca luminosidade e detecção de movimento?.",
+    "api": "https://api.thingspeak.com/channels/3126317/feeds.json?api_key=9LOBW4PG46BH3TBY&results=10",
+    "apiWrite":"2R71CJDM79O81XE3",
+    "channel": "3126317",
+    "link": "https://wokwi.com/projects/445458203465635841",
+    "icon": "./src/assets/icons/patio.svg"
   },
     "6": {
     "sala": "Quadra",

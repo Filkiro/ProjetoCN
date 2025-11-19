@@ -10,14 +10,14 @@
     "icon": "./src/assets/icons/sala_de_aula.svg"
   },
   "2": {
-    "sala": "Jardim",
-    "nome": "Monitoramento de Temperatura",
-    "descricao": "Projeto que coleta dados de temperatura em tempo real.",
-    "api": "https://api.thingspeak.com/channels/3035666/feeds.json?results=10",
-    "apiWrite":"RJXVRQ5ZTZ4OTNJI",
-    "channel": "3035666",
-    "link": "https://wokwi.com/projects/445548944599740417",
-    "icon": "./src/assets/icons/temperatura.svg"
+    "sala": "Sala de Aula",
+    "nome": "ESP Company",
+    "descricao": "O projeto desenvolvido tem como objetivo criar um sistema automatizado capaz de controlar o ar-condicionado de forma inteligente, unindo tecnologia, eficiência energética e conforto térmico. Utilizando o microcontrolador ESP32, juntamente com um sensor de temperatura e umidade (DHT22) e um sensor de movimento (PIR), o sistema monitora continuamente o ambiente e toma decisões automáticas com base nas informações coletadas.\nToda a estrutura funciona de maneira integrada: quando a temperatura atinge níveis elevados e a presença de pessoas é detectada, o sistema simula o acionamento do ar-condicionado, representado pelo controle de um LED. Caso não haja movimento ou a temperatura esteja adequada, o “ar” é automaticamente desligado, evitando gasto desnecessário de energia.\nAlém disso, os dados obtidos são enviados em tempo real para a plataforma ThingSpeak, onde são transformados em gráficos fáceis de visualizar e interpretar. Essa integração com a nuvem permite analisar o comportamento do ambiente ao longo do tempo, reforçando o caráter moderno e tecnológico do projeto.\nO sistema demonstra na prática como a Internet das Coisas (IoT) pode ser aplicada para resolver problemas reais, como o desperdício energético em ambientes educacionais. Mais do que um simples circuito, o projeto representa um passo importante em direção a ambientes mais inteligentes, sustentáveis e conectados, ao mesmo tempo em que oferece aprendizado profundo em programação, eletrônica, redes e computação em nuvem.",
+    "api": "https://api.thingspeak.com/channels/3035673/feeds.json?api_key=16GR2GKUK13OFJ8L&results=10",
+    "apiWrite":"28U9ZQ5IOX8BXQ19",
+    "channel": "3035673",
+    "link": "ERROR: Link inválido",
+    "icon": "./src/assets/icons/sala.svg"
   },
   "3": {
     "sala": "Biblioteca",

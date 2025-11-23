@@ -62,7 +62,7 @@
   },
     "7": {
     "sala": "Jardim",
-    "nome": "Irriga Etecamp",
+    "nome": "Etecamp GreenGarden",
     "descricao": "O projeto é um sistema de Irrigação para o Jardim da etec de campo limpo Paulista, ele funciona coletando dados de sensores (umidade do solo, umidade atmosfera e temperatura), para determinar quando o Jardim deve ser irrigado",
     "api": "https://api.thingspeak.com/channels/3129373/feeds.json?api_key=6J23N41I7PGCM9PO&results=10",
     "apiWrite":"1I6445WHVN40O7J3",

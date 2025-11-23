@@ -16,7 +16,7 @@
     "api": "https://api.thingspeak.com/channels/3035673/feeds.json?api_key=16GR2GKUK13OFJ8L&results=10",
     "apiWrite":"28U9ZQ5IOX8BXQ19",
     "channel": "3035673",
-    "link": "ERROR: Link inválido",
+    "link": "https://res.cloudinary.com/djis0hbnk/image/upload/w_600,h_340/v1763901717/1a1e7bf6-58a3-4264-b342-31c27f3f8ea5_a4galu.jpg",
     "icon": "./src/assets/icons/sala.svg"
   },
   "3": {
